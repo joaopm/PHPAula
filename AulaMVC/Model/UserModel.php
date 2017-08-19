@@ -1,4 +1,4 @@
-<<?php
+<?php
   /**
    * @author João Pedro Maffezzolli
    */
@@ -7,7 +7,7 @@
     private $nome;
     private $sobrenome;
     private $idade;
-    private $password;
+    private $senha;
     private $email;
 
     public function __set($propriedade, $valor) {
