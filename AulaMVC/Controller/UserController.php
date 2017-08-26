@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include '../Model/UserModel.php';
   include '../Include/UserValidate.php';
 
@@ -29,14 +30,13 @@
       $user->idade = $_POST['txtIdade'];
       $user->senha = $_POST['pwdSenha'];
 
-      header("location:../View/UserViewResult.php?".
-             "user=$user->user&".
-             "mail=$user->email");
+      $_SESSION['user'] = $user->user;
+      $_SESSION['mail'] = $user->email;
+      header("location:../View/UserViewResult.php?");
     } else {
       $err = serialize($erros);
-
-      header("location:../View/UserViewError.php?".
-             "erros=$err");
+      $_SESSION['erros'] = $err;
+      header("location:../View/UserViewError.php?");
     }
   } else {
     echo "Informe todos os campos";
