@@ -7,7 +7,7 @@
     private $nome;
     private $sobrenome;
     private $idade;
-    private $senha;
+    private $password;
     private $email;
 
     public function __set($propriedade, $valor) {

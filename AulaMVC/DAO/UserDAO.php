@@ -2,11 +2,11 @@
   include "../Persistence/ConnectionDB.php";
 
   class UserDAO {
-    private function __construct() {
+    public function __construct() {
       $this->connection = ConnectionDB::getInstance();
     }
 
-    private function insertUser($user) {
+    public function insertUser($user) {
       try {
         $status = $this->connection->prepare("insert into users(id, user, nome, sobrenome, idade, password, email) values(null,?,?,?,?,?,?)");
 
